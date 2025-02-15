@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Строительство деревень: проекты, материалы и советы.">
     <title>Строительство деревень</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Для внешнего стиля -->
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,50 +14,131 @@
             background-color: #f4f4f4;
             color: #333;
         }
+
         header {
             background-color: #3a7d44;
             color: white;
             padding: 20px;
             text-align: center;
+            border-bottom: 5px solid #2e5a2f;
         }
+
         nav {
             display: flex;
             justify-content: center;
             background-color: #2e5a2f;
         }
+
         nav a {
             color: white;
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
+            transition: background-color 0.3s;
         }
+
         nav a:hover {
             background-color: #4e8b55;
         }
+
         .container {
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
             background-color: white;
         }
+
         h2 {
             color: #3a7d44;
+            text-align: center;
+            margin-bottom: 20px;
         }
+
         .section {
             margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
         }
+
+        .section:hover {
+            transform: scale(1.02);
+        }
+
         footer {
             background-color: #2e5a2f;
             color: white;
             text-align: center;
             padding: 10px;
-            position: fixed;
-            bottom: 0;
+            position: relative;
             width: 100%;
         }
+
         img {
             max-width: 100%;
             height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #3a7d44;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .faq-answer {
+            display: none;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .faq-question:hover {
+            background-color: #4e8b55;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .testimonial p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .testimonial .author {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #3a7d44;
         }
     </style>
 </head>
@@ -72,6 +153,8 @@
     <a href="#plans">Проекты</a>
     <a href="#materials">Материалы</a>
     <a href="#steps">Шаги строительства</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact">Контакты</a>
 </nav>
 
@@ -102,11 +185,57 @@
             <li>Обустройство территории</li>
         </ol>
     </section>
+
+    <!-- New Gallery Section -->
+    <section id="gallery" class="section">
+        <h2>Галерея</h2>
+        <div class="gallery">
+            <img src="village1.jpg" alt="Деревня 1">
+            <img src="village2.jpg" alt="Деревня 2">
+            <img src="village3.jpg" alt="Деревня 3">
+        </div>
+    </section>
+
+    <!-- New Testimonials Section -->
+    <section id="testimonials" class="section">
+        <h2>Отзывы клиентов</h2>
+        <div class="testimonial">
+            <p>«Строительство деревни прошло на высшем уровне. Все было сделано быстро и качественно!»</p>
+            <div class="author">Иван Иванов</div>
+        </div>
+        <div class="testimonial">
+            <p>«Отличная команда, отличные материалы, замечательный результат! Рекомендую!»</p>
+            <div class="author">Мария Петрова</div>
+        </div>
+    </section>
+
+    <!-- New FAQ Section -->
+    <section id="faq" class="section">
+        <h2>Часто задаваемые вопросы</h2>
+        <div class="faq-item">
+            <div class="faq-question">Какие материалы лучше выбрать для строительства?</div>
+            <div class="faq-answer">Это зависит от вашего бюджета и климатических условий региона. Мы рекомендуем рассматривать дерево, кирпич или эко-материалы.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Сколько времени займет строительство?</div>
+            <div class="faq-answer">Строительство может занять от нескольких месяцев до года в зависимости от сложности проекта.</div>
+        </div>
+    </section>
 </div>
 
 <footer>
     <p>Контакты: info@villagebuilder.ru | Телефон: +7 (123) 456-78-90</p>
 </footer>
+
+<script>
+    // FAQ Toggle script
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
 
 </body>
 </html>
